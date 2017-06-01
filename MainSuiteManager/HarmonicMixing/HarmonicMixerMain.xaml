@@ -1,0 +1,52 @@
+﻿<Window    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MainSuiteManager" 
+    mc:Ignorable="d"
+    x:Class="HarmonicMixing.HarmonicMixerMain" Title="Harmonic Mixer" 
+    Height="431" Width="728" ResizeMode="NoResize" UseLayoutRounding="False" 
+    FontWeight="Bold" FontFamily="Consolas" 
+    Icon="/MainSuiteManager;component/Resources/msmWindow.png" Initialized="Window_Initialized">
+    <Grid>
+        <DataGrid x:Name="dgCollection" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="344" Width="692" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Trackname" Width="497" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Genre" Width="65" Binding="{Binding Path=Genre}"/>
+                <DataGridTextColumn Header="Key" Width="35" Binding="{Binding Path=Key}"/>
+                <DataGridTextColumn Header="Created" Width="69" Binding="{Binding Path=Created}"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" />
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" />
+            </DataGrid.Resources>
+        </DataGrid>
+        <TextBox x:Name="tbCurrentTrack" HorizontalAlignment="Left" Height="23" Margin="10,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="0,3" Width="497"/>
+        <Label x:Name="lblGain" Content="Gain:" HorizontalAlignment="Left" Margin="512,359,0,0" VerticalAlignment="Top" Width="41" Height="23"/>
+        <TextBox x:Name="tbGain" HorizontalAlignment="Left" Height="23" Margin="558,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="0,3" Width="35" IsReadOnly="True"/>
+        <Label x:Name="lblBPM" Content="BPM:" HorizontalAlignment="Left" Margin="598,359,0,0" VerticalAlignment="Top" Height="23"/>
+        <TextBox x:Name="tbBPM" HorizontalAlignment="Left" Height="23" Margin="639,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="0,3" Width="35" MaxLength="3"  PreviewTextInput="NumericOnly"/> 
+        <ToggleButton x:Name="btnLock" Content="🔓" HorizontalAlignment="Left" Margin="679,359,0,0" VerticalAlignment="Top" Padding="0" Foreground="Red" FontSize="21" FontWeight="Thin" Width="23" Height="23">
+            <ToggleButton.Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                    <Setter Property="Template">
+                        <Setter.Value>                            
+                            <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                <Border BorderBrush="Transparent" BorderThickness="0" Background="Transparent">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
+        </ToggleButton>
+    </Grid>
+</Window>

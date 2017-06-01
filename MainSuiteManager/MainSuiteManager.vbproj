@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83061310-6DD1-400E-85EC-73BC2B7D68B8}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MainSuiteManager</RootNamespace>
+    <AssemblyName>MainSuiteManager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MainSuiteManager.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MainSuiteManager.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\MSMApplication.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ASCIIGeneration\ASCIIGeneratorMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HarmonicMixing\HarmonicMixerMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManagerMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MemberOrganization\OrganizerMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASCIIGeneration\ASCIIGeneratorMain.xaml.vb">
+      <DependentUpon>ASCIIGeneratorMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HarmonicMixing\HarmonicMixerMain.xaml.vb">
+      <DependentUpon>HarmonicMixerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMain.xaml.vb">
+      <DependentUpon>ManagerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemberOrganization\CompositeDate.vb" />
+    <Compile Include="MemberOrganization\CompositeDelivery.vb" />
+    <Compile Include="MemberOrganization\OrganizerMain.xaml.vb">
+      <DependentUpon>OrganizerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemberOrganization\CompositeMember.vb" />
+    <Compile Include="MemberOrganization\CompositeMemberColorConverter.vb" />
+    <Compile Include="KeyMonitoring\KeyCommand.vb" />
+    <Compile Include="KeyMonitoring\KeyCommandOperator.vb" />
+    <Compile Include="KeyMonitoring\KeyMonitor.vb" />
+    <Compile Include="MSMCommon\ConsoleController.vb" />
+    <Compile Include="MSMCommon\ConsoleSyntaxException.vb" />
+    <Compile Include="MSMCommon\ConstructorAlias.vb" />
+    <Compile Include="MSMCommon\MethodAlias.vb" />
+    <Compile Include="MSMCommon\ObjectToFile.vb" />
+    <Compile Include="StorageMonitoringNotImplemented\StorageDevice.vb" />
+    <Compile Include="StorageMonitoringNotImplemented\StorageDeviceOperator.vb" />
+    <Compile Include="StorageMonitoringNotImplemented\StorageMonitor.vb" />
+    <Compile Include="MemberOrganization\CompositeMemberOperator.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_0.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_1.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_10.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_11.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_12.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_13.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_14.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_15.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_2.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_3.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_4.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_5.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_6.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_7.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_8.xml" />
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_9.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSMApplication.ico" />
+    <Resource Include="Resources\MSMWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_16.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChromeShutdownScheduler\ChromeShutdownScheduler.vbproj">
+      <Project>{c5bb65b5-d63d-4bf0-a3ed-f137ddcebf13}</Project>
+      <Name>ChromeShutdownScheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasterLib\MasterLib.vbproj">
+      <Project>{edd76a6e-4f76-4a4c-93b2-1d7b91f0a24f}</Project>
+      <Name>MasterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MediaFileFormatter\MediaFileFormatter.vbproj">
+      <Project>{6ba4a369-955b-451a-947a-fb2290e88899}</Project>
+      <Name>MediaFileFormatter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_17.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Commands\KeyCommand_18.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

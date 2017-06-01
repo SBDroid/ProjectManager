@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<KeyCommand xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Type>OS</Type>
+  <ID>DIAG</ID>
+  <Action>/k cleanmgr.exe &amp; dfrgui.exe &amp; sigverif.exe &amp; dxdiag.exe &amp; mrt.exe &amp; mdsched.exe &amp; sfc.exe /scannow &amp; chkdsk.exe /f &amp; exit</Action>
+</KeyCommand>
